@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noon</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body id="body">
+    <!-- add navbar -->
+    <nav class="navbar navbar-light  navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid bg-warning">
+        <a class="navbar-brand " href="#">
+          <img class="rounded-circle "
+            src="data:image/png;base64,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">
+          Noon
+        </a>
+
+        <button class="navbar-toggler" type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page"
+                href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#"
+                role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Deliver to
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item"
+                    href="#"> <img
+                      src="https://f.nooncdn.com/s/app/com/common/images/flags/eg.svg"
+                      alt="country-eg" class="mx-1">Egypt</a></li>
+                <li><a class="dropdown-item" href="#"><img
+                      src="https://f.nooncdn.com/s/app/com/common/images/flags/ae.svg"
+                      alt="country-ae" width="31px" height="20px" class=" mx-1">
+                    UAE</a></li>
+                <li><a class="dropdown-item" href="#"><img
+                      src="https://f.nooncdn.com/s/app/com/common/images/flags/sa.svg"
+                      alt="country-sa" width="31px" height="20px" class=" mx-1">
+                    KSA</a></li>
+              </ul>
+            </li>
+          </ul>
+          <input class="form-control me-2" type="search"
+            placeholder="what are you looking for?"
+            aria-label="Search">
+          <button class="btn btn-light me-2" type="button" id="btn1"><a href="#"> <img
+                src="https://img.icons8.com/?size=100&id=25031&format=png&color=000000"
+                id="img"></a></button>
+
+        </div>
+      </div>
+    </nav>
+    <!-- end navbar -->
+    <!-- start slider -->
+    <div id="carouselExampleControlsNoTouching" class="carousel slide"
+      data-bs-touch="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="https://f.nooncdn.com/mpcms/EN0003/assets/502678ff-b088-4cdd-bcb8-7b0f5ccb5142.png?format=avif"
+            class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://f.nooncdn.com/mpcms/EN0003/assets/0abea396-f92b-4a20-90eb-dd1a48e3869e.png?format=avif"
+            class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://f.nooncdn.com/ads/banner-1440x1440/noon_eg_home_page_hp_sfu2_1440x200.1715972543.5066495.png?format=avif"
+            class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://f.nooncdn.com/mpcms/EN0003/assets/c02f32b7-c3e6-40fa-92dc-72ef825acd9e.png?format=avif"
+            class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://f.nooncdn.com/mpcms/EN0003/assets/d0b434cf-d9c9-450c-b99d-e0a534564589.png?format=avif"
+            class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://f.nooncdn.com/ads/banner-1440x1440/en_dk_eg-hero-01-hp.1723789482.524587.png?format=avif"
+            class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button"
+        data-bs-target="#carouselExampleControlsNoTouching"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button"
+        data-bs-target="#carouselExampleControlsNoTouching"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- end slider -->
+    <!-- start cards -->
+    <div class="container  text-center  mt-3  ">
+      <div class="row changeCard ">
+        <div class="col-lg-4 bg-light " >
+          <div class="row changeCard" id="row1">
+            <div class="col-lg-12">
+              <h2> More reasons to shop</h2>
+            </div>
+          </div>
+          <div class="row changeCard " id="row2" >
+            <div class="col-lg-6  p-2">
+              <div class="card" style="width: 12rem;">
+                <img
+                  src="https://f.nooncdn.com/mpcms/EN0003/assets/8247363b-5688-48db-86d9-814f1b7d6e40.png?format=avif"
+                  class="card-img-top" alt="...">
+                <div class="card-body">
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 p-2">
+              <div class="card" style="width: 12rem;">
+                <img
+                  src="https://f.nooncdn.com/mpcms/EN0003/assets/b82ad2e6-d799-4f14-96ac-34896b91714a.png?format=avif"
+                  class="card-img-top" alt="...">
+                <div class="card-body">
+                  <a href="#" class="btn btn-primary">shop now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row changeCard " id="row3">
+            <div class="col-lg-6 p-2">
+              <div class="card" style="width: 12rem;">
+                <img
+                  src="https://f.nooncdn.com/mpcms/EN0003/assets/cb212d54-1aa9-4af0-9ea8-d81d3882d4ee.png?format=avif"
+                  class="card-img-top" alt="...">
+                <div class="card-body">
+                  <a href="#" class="btn btn-primary">all you need</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 p-2">
+              <div class="card" style="width: 12rem;">
+                <img
+                  src="https://f.nooncdn.com/mpcms/EN0003/assets/331dd090-5b2b-4af4-bee1-b824886f6697.png?format=avif"
+                  class="card-img-top" alt="...">
+                <div class="card-body">
+                  <a href="#" class="btn btn-primary">more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 bg-warning  ">
+          <div class="row ">
+            <div class="col-lg-12">
+              <h2>Weekend mega deals</h2>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-lg-6 p-2 ">
+              <div class="card" style="width: 11rem;">
+                <img
+                  src="https://f.nooncdn.com/mpcms/EN0003/assets/cb212d54-1aa9-4af0-9ea8-d81d3882d4ee.png?format=avif"
+                  class="card-img-top" style="height: 11.7rem;" alt="...">
+                <div class="card-body">
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 p-2">
+              <div class="card" style="width: 11rem; ">
+                <img
+                  src="https://f.nooncdn.com/products/tr:n-t_240/v1677615952/N44668276A_1.jpg"
+                  class="card-img-top" style="height: 11.7rem;" alt="...">
+                <div class="card-body">
+                  <a href="#" class="btn btn-primary">up to 35% off</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-lg-6  p-2   ">
+              <div class="card" style="width: 11rem;">
+                <img
+                  src="https://f.nooncdn.com/p/v1655474955/N25937075A_1.jpg?format=avif&width=240"
+                  class="card-img-top" style="height: 11.7rem;" alt="...">
+                <div class="card-body">
+                  <a href="#" class="btn btn-primary">up to 40% off</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 p-2">
+              <div class="card" style="width: 11rem;">
+                <img
+                  src="https://f.nooncdn.com/products/tr:n-t_240/pzsku/Z86D7298BC49EE02CC04FZ/45/_/1678869177/7487095f-26ec-4497-aec1-392b6abefe66.jpg"
+                  class="card-img-top" style="height: 11.7rem;" alt="...">
+                <div class="card-body">
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 bg-light  ">
+          <div class="row changeCard" id ="row6">
+            <div class="col lg-12">
+              <h2>In focus </h2>
+            </div>
+          </div>
+          <div class="row changeCard " id="row4">
+            <div class="col-lg-12 p-2 ">
+              <div class="card"  >
+                <img
+                  src=" https://f.nooncdn.com/mpcms/EN0003/assets/bfdc4efd-14a9-4a96-aed2-839fd31c7b5b.png?format=avif"
+                  class="card-img-top p-1 " style="height: 256.8px;" alt="...">
+
+              </div>
+            </div>
+            <div class="row changeCard" style="margin-left: 0px;margin-right: 0px;padding-right: 0px;padding-left: 0px;" id="row5" >
+              <div class="col-lg-12 p-2">
+                <div class="card" >
+                  <img
+                    src=" https://f.nooncdn.com/ads/banner-410x410/en_dk_eg-top-01.1723118465.7667987.png?format=avif"
+                    class="card-img-top p-1 " style="height: 258.4px;" alt="...">
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- end cards -->
+        <!-- start collection -->
+        <div class="container text-center mt-3 ">
+          <div class="row mb-3" id="women">
+            <div class="col">
+              <!-- men's section -->
+              <div class="row">
+                <div class="col-lg-10 p-4">
+                  <h2>men's fashion</h2>
+                </div>
+                <div class="col-lg-2 p-4">
+                  <input class="btn btn-primary collectionBtn " type="button"
+                    value=" click here">
+                </div>
+              </div>
+              <div class="row " >
+                <div class="col p-2  woman">
+                  <div class="card" style="width: 18rem;">
+                    <img
+                      src="https://f.nooncdn.com/mpcms/EN0003/assets/8a12f5ee-3f9f-4784-b3c6-8385a49ef283.png?format=avif"
+                      class="card-img-top p-2" alt="...">
+                  </div>
+                </div>
+                <div class="col p-2 woman">
+                  <div class="card" style="width: 18rem;">
+                    <img
+                      src="https://f.nooncdn.com/mpcms/EN0003/assets/1d3b31e0-b791-47c9-8e65-b1534ce16296.png?format=avif"
+                      class="card-img-top p-2" alt="...">
+                  </div>
+                </div>
+                <div class="col p-2 woman">
+                  <div class="card" style="width: 18rem;">
+                    <img
+                      src="https://f.nooncdn.com/mpcms/EN0003/assets/6d7db1a5-b18d-4f50-8651-0dc993b000b2.png?format=avif"
+                      class="card-img-top p-2" alt="...">
+                  </div>
+                </div>
+                <div class="col p-2 woman">
+                  <div class="card" style="width: 18rem;">
+                    <img
+                      src="https://f.nooncdn.com/mpcms/EN0003/assets/fb61c9ec-2341-4ec3-9d21-6dc15dc70a78.png?format=avif"
+                      class="card-img-top p-2" alt="...">
+                  </div>
+                </div>
+              </div>
+                <!-- end men's section -->
+               <!-- start women's section -->
+              <div class="row" >
+                <div class="col-lg-10 p-4">
+                  <h2>Women's fashion</h2>
+                </div>
+                <div class="col-lg-2 p-4">
+                  <input class="btn btn-primary collectionBtn" type="button" value=" click here" >
+                </div>
+              </div>
+              <div class="row">
+                <div class="col p-2  woman">
+                  <div class="card" style="width: 18rem;">
+                    <img
+                      src="https://f.nooncdn.com/mpcms/EN0003/assets/acfd21ba-9beb-405a-85c4-1e94c8a60fb5.png?format=avif"
+                      class="card-img-top p-2" alt="...">
+                  </div>
+                </div>
+                <div class="col p-2 woman">
+                  <div class="card" style="width: 18rem;">
+                    <img
+                      src="https://f.nooncdn.com/mpcms/EN0003/assets/e6a4e9fd-f805-499a-a037-59afbfd9441c.png?format=avif"
+                      class="card-img-top p-2" alt="...">
+                  </div>
+                </div>
+                <div class="col p-2 woman">
+                  <div class="card" style="width: 18rem;">
+                    <img
+                      src="https://f.nooncdn.com/mpcms/EN0003/assets/48e4881e-6abe-4b7a-b336-694e36b489ef.png?format=avif"
+                      class="card-img-top p-2" alt="...">
+                  </div>
+                </div>
+                <div class="col p-2 woman">
+                  <div class="card" style="width: 18rem;">
+                    <img
+                      src="https://f.nooncdn.com/mpcms/EN0003/assets/463678bf-9c49-4ea6-a175-c997749b5d5d.png?format=avif"
+                      class="card-img-top p-2" alt="...">
+                  </div>
+                </div>
+              </div>
+                      <!-- end women's section -->
+                        <!-- start kids' section -->
+              <div class="row" >
+                <div class="col-lg-10 p-4">
+                  <h2>kids' fashion</h2>
+                </div>
+                <div class="col-lg-2 p-4">
+                  <input class="btn btn-primary collectionBtn" type="button" value=" click here" >
+                </div>
+              </div>
+              <div class="row">
+                <div class="col p-2  woman">
+                  <div class="card" style="width: 18rem;">
+                    <img
+                      src="https://f.nooncdn.com/mpcms/EN0003/assets/4197a030-1c88-4485-8090-8c6d79414a3a.png?format=avif"
+                      class="card-img-top p-2" alt="...">
+                  </div>
+                </div>
+                <div class="col p-2 woman">
+                  <div class="card" style="width: 18rem;">
+                    <img
+                      src="https://f.nooncdn.com/mpcms/EN0003/assets/81314b74-a883-431d-a740-30b592bdb732.png?format=avif"
+                      class="card-img-top p-2" alt="...">
+                  </div>
+                </div>
+                <div class="col p-2 woman">
+                  <div class="card" style="width: 18rem;">
+                    <img
+                      src="https://f.nooncdn.com/mpcms/EN0003/assets/121d6ee9-73cc-4881-87f4-2bf5f8a17cae.png?format=avif"
+                      class="card-img-top p-2" alt="...">
+                  </div>
+                </div>
+                <div class="col p-2 woman">
+                  <div class="card" style="width: 18rem;">
+                    <img
+                      src="https://f.nooncdn.com/mpcms/EN0003/assets/f9a0b0b5-83ae-4901-bd4f-c2968766c672.png?format=avif"
+                      class="card-img-top p-2" alt="...">
+                  </div>
+                </div>
+              </div>
+                      <!-- end women's section -->
+            </div>
+          </div>
+        </div>
+      <!--end collection -->
+        <!-- scroll to top -->
+        <button id="scroll-to-top"> <i class="fa fa-thin fa-arrow-up" style="color: black;"></i></button>
+        <!-- scroll to top end -->
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+          crossorigin="anonymous"></script>
+        <script src="main.js"></script>
+      </body>
+    </html>
+   
